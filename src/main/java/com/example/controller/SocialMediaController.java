@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Account;
+import com.example.entity.Message;
 import com.example.service.AccountService;
 import com.example.service.MessageService;
 
@@ -35,6 +36,11 @@ public class SocialMediaController {
     @PostMapping("/login")
     public ResponseEntity<Account> verifyUser(@RequestBody Account account){
         return accountService.login(account);
+    }
+
+    @PostMapping("/messages")
+    public ResponseEntity<Message> createMessage(@RequestBody Message message){
+        return messageService.createNewMessage(message);
     }
     
 }
