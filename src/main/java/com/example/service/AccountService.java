@@ -16,10 +16,6 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-    public AccountService(AccountRepository accountRepository){
-        this.accountRepository = accountRepository;
-    }
-
     public ResponseEntity<Account> registerAccount(Account account) {
         if (account.getUsername() == null || account.getUsername().trim().isBlank()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
