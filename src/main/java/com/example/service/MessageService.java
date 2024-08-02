@@ -58,7 +58,4 @@ public class MessageService {
     public List<Message> getAllMessagesById(Integer accountId) {
         return messageRepository.findByPostedBy(accountId);
     }
-
-    
-    
 }
