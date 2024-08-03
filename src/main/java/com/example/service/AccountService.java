@@ -27,7 +27,6 @@ public class AccountService {
         if (existingAccount.isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
-
         Account saveAccount = accountRepository.save(account);
         return ResponseEntity.ok(saveAccount);
     }
